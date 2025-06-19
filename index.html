@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <header>
+        <div>
+            <div>👑</div>
+            <h1>Royal Donut Kitchen</h1>
+        </div>
+        <button>Add Donut</button>
+    </header>
+    <div> <!--  container -->
+        <div> <!-- feature panel-->
+            <div> <!-- feature content -->
+                <div>🍩</div> <!--donut voor in de div-->
+                <div> <!--text-->
+                    <p>
+                        Savor the finest treats! At the Royal Donut Kitchen, each recipe is carefully crafted by our Head Chef. From the sparkling sweetness of Starbright Sparkle to the bold kick of Dragon's Breath, every bite delivers a taste fit for royalty. Explore today's featured creation and add a new classic to your personal menu!
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div> <!-- sort -->
+            <button>
+                <span>Sort by Name</span>
+            </button>
+            <button>
+                <span>Sort by Rating</span>
+            </button>
+        </div>
+
+        <div></div> <!--donut list-->
+    </div>
+    <!-- Add New Donut Form -->
+    <div>
+        <h1>Add New Donut</h1>
+        <form>
+            <div>
+                <label for="donut-name">Donut Name</label>
+                <input type="text" id="donut-name" placeholder="Enter donut name">
+            </div>
+            <div>
+                <label for="donut-price">Price ($)</label>
+                <input type="number" id="donut-price" placeholder="0.00">
+            </div>
+            <div>
+                <label for="donut-rating">Seal of Approval (1-5)</label>
+                <select id="donut-rating">
+                    <option value="">Select rating</option>
+                    <option value="1">1 Star</option>
+                    <option value="2">2 Stars</option>
+                    <option value="3">3 Stars</option>
+                    <option value="4">4 Stars</option>
+                    <option value="5">5 Stars</option>
+                </select>
+            </div>
+            <div>
+                <button type="button">Cancel</button>
+                <button type="submit">Add Donut</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
