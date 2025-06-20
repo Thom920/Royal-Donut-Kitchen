@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title></title>
+    <title>Royal Donut Kitchen</title>
 </head>
 <body>
     <header class="header">
@@ -12,7 +12,7 @@
             <div class="crown">👑</div>
             <h1>Royal Donut Kitchen</h1>
         </div>
-        <button class="add_donut">Add Donut</button>
+        <button class="add_donut" onclick="openAddModal()">Add Donut</button>
     </header>
     <div class="container"> <!--  container -->
         <div class="feature_panel"> <!-- feature panel-->
@@ -26,31 +26,36 @@
             </div>
         </div>
 
-        <div> <!-- sort -->
-            <button>
+        <div class="controls">
+            <button class="sort-btn" onclick="toggleSort('name')" id="name-sort">
                 <span>Sort by Name</span>
+                <span id="name-arrow">↕️</span>
             </button>
-            <button>
+            <button class="sort-btn" onclick="toggleSort('seal')" id="seal-sort">
                 <span>Sort by Rating</span>
+                <span id="seal-arrow">↕️</span>
             </button>
         </div>
 
-<div id="loading">Loading donuts...</div>
-<div id="donut-grid"></div>
+        <div id="loading" class="loading">Loading donuts...</div>
+        <div id="error-message"></div>
+        <div id="success-message"></div>
+        <div id="donut-grid" class="donut-grid"></div>
     </div>
     <!-- Add New Donut Form -->
-    <div>
+    <div id="add-modal" class="modal">
+        <div class="modal-content"></div>
         <h1>Add New Donut</h1>
-        <form>
-            <div>
+        <form id="add-form">
+            <div class="form-group">
                 <label for="donut-name">Donut Name</label>
                 <input type="text" id="donut-name" placeholder="Enter donut name">
             </div>
-            <div>
+            <div class="form-group">
                 <label for="donut-price">Price ($)</label>
                 <input type="number" id="donut-price" placeholder="0.00">
             </div>
-            <div>
+            <div class="form-group">
                 <label for="donut-rating">Seal of Approval (1-5)</label>
                 <select id="donut-rating">
                     <option value="">Select rating</option>
@@ -61,12 +66,23 @@
                     <option value="5">5 Stars</option>
                 </select>
             </div>
-            <div>
-                <button type="button">Cancel</button>
-                <button type="submit">Add Donut</button>
+            <div class="modal-actions">
+                <button type="button" class="btn-secondary" onclick="closeAddModal()">Cancel</button>
+                <button class="add-btn" type="submit" class="btn-primary">Add Donut</button>
             </div>
         </form>
     </div>
     <script src="loadDonut.js"></script>
+    <script>
+        function openAddModal() {
+            document.getElementById('add-modal').classList.add('show');
+            document.body.style.overflow = 'hidden';
+        }
+                function closeAddModal() {
+            document.getElementById('add-modal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+            document.getElementById('add-form').reset();
+        }
+    </script>
 </body>
 </html>
